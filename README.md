@@ -6,8 +6,9 @@ Help Desk ve Ticket Yönetim Sistemi Uyhulaması. ReactJS,Typescript,Strapi Back
 
 ### Auth
 
-[ ] Kullanıcı Girişi
+[x] Kullanıcı Giriş Ekranı
 [ ] Üye Olma Ekranı
+[ ] Kullanıcı Giriş Api
 [ ] Auth Check ve Token Kontrolü
 
 ### Dashboard

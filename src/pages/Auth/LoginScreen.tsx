@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginScreen.css";
 
 const LoginScreen = () => {
+  const [state, setState] = useState({
+    username: "",
+    password: "",
+  });
+  const { username, password } = state;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(state);
+  };
   return (
     <div className="container">
       <div className="row">
@@ -14,14 +30,26 @@ const LoginScreen = () => {
 
           <div className="col-lg-12 login-form">
             <div className="col-lg-12 login-form">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label className="form-control-label">Kullanıcı Adınız</label>
-                  <input type="text" className="form-control" />
+                  <input
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
                 </div>
                 <div className="form-group">
                   <label className="form-control-label">Şifreniz</label>
-                  <input type="password" className="form-control" />
+                  <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
                 </div>
 
                 <div className="col-lg-12 loginbttm">
