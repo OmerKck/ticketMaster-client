@@ -14,7 +14,8 @@ Help Desk ve Ticket Yönetim Sistemi Uyhulaması. ReactJS,Typescript,Strapi Back
 ### Dashboard
 
 - [ ] Kullanıcının Ticketları
-- [ ] Side Menü -[ ] Rapor Kartları
+- [ ] Side Menü
+- [ ] Rapor Kartları
 
 ### Ticket
 
