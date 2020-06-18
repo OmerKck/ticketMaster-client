@@ -1,11 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
+import { apiURL } from "src/constants";
+import { getToken } from "src/utils";
 
 const Layout = ({ children }) => {
-  const router = useHistory();
-  const pathName = router.location.pathname;
+  const history = useHistory();
+  const pathName = history.location.pathname;
+
+  useEffect(() => {
+    const token = getToken();
+    if (token) {
+      axios
+        .get(`${apiURL}/users/me`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
+        .then((res) => {
+          if (res.data) {
+            history.push("/");
+          } else {
+            history.push("/login");
+          }
+        })
+        .catch((err) => {
+          if (err.response.data.statusCode === 401) {
+            history.push("/login");
+          }
+        });
+    } else {
+      history.push("/login");
+    }
+  }, [history]);
 
   return (
     <>

@@ -8,12 +8,11 @@ Help Desk ve Ticket Yönetim Sistemi Uyhulaması. ReactJS,Typescript,Strapi Back
 
 - [x] Kullanıcı Giriş Ekranı
 - [x] Kullanıcı Giriş Api
-- [ ] Üye Olma Ekranı
-- [ ] Auth Check ve Token Kontrolü
+- [x] Üye Olma Ekranı
+- [x] Auth Check ve Token Kontrolü
 
 ### Dashboard
 
-- [ ] Kullanıcının Ticketları
 - [ ] Side Menü
 - [ ] Rapor Kartları
 
